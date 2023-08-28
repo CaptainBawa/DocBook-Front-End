@@ -5,12 +5,10 @@ import AddDoctor from './components/AddDoctor';
 
 const App = () => (
   <BrowserRouter>
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Doctor />} />
-        <Route path="/" element={<AddDoctor />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Doctor />} />
+      <Route path="/" element={<AddDoctor />} />
+    </Routes>
   </BrowserRouter>
 );
 
