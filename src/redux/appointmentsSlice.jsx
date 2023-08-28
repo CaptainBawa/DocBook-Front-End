@@ -9,7 +9,7 @@ const initialState = {
 
 export const fetchAppointments = createAsyncThunk('appointments/fetchAppointments', async () => {
 try {
-  const response = await axios.get('/appointments');
+  const response = await axios.get('http://localhost:3000/appointments');
   return response.data;
 } catch (error) {
     throw new Error('Failed to fetch appointments');
@@ -18,7 +18,7 @@ try {
 
 export const createAppointment = createAsyncThunk('appointments/createAppointment', async (appointmentData) => {
 try {
-    const response = await axios.post('/appointments', appointmentData);
+    const response = await axios.post('http://localhost:3000/appointments', appointmentData);
     return response.data;
 } catch (error) {
     throw new Error('Failed to create an appointments');
