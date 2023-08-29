@@ -8,6 +8,7 @@ function DoctorList() {
   const status = useSelector(selectDoctorsStatus);
   const error = useSelector(selectDoctorsError);
 
+  console.log(doctors);
   useEffect(() => {
     dispatch(fetchDoctors());
   }, [dispatch]);
