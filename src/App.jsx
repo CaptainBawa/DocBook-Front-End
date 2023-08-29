@@ -1,14 +1,10 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Doctor from './components/Doctor';      
-import AddDoctor from './components/AddDoctor';
+import { BrowserRouter } from 'react-router-dom';
+import Navigation from './components/Navigation'; // Import the Navigation component
 
 const App = () => (
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Doctor />} />
-      <Route path="/" element={<AddDoctor />} />
-    </Routes>
+    <Navigation />
   </BrowserRouter>
 );
 
