@@ -1,3 +1,4 @@
+// src/redux/appointmentsSlice.jsx
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -8,19 +9,19 @@ const initialState = {
 };
 
 export const fetchAppointments = createAsyncThunk('appointments/fetchAppointments', async () => {
-try {
-  const response = await axios.get('http://localhost:3000/appointments');
-  return response.data;
-} catch (error) {
+  try {
+    const response = await axios.get('http://localhost:3000/appointments');
+    return response.data;
+  } catch (error) {
     throw new Error('Failed to fetch appointments');
   }
 });
 
 export const createAppointment = createAsyncThunk('appointments/createAppointment', async (appointmentData) => {
-try {
+  try {
     const response = await axios.post('http://localhost:3000/appointments', appointmentData);
     return response.data;
-} catch (error) {
+  } catch (error) {
     throw new Error('Failed to create an appointments');
   }
 });
