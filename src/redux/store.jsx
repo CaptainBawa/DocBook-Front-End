@@ -1,3 +1,4 @@
+// src/redux/store.jsx
 import { configureStore } from '@reduxjs/toolkit';
 import doctorsReducer from './doctorsSlice';
 import appointmentsReducer from './appointmentsSlice';
