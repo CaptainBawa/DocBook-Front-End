@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Doctor from './components/DoctorList';      
+import Doctor from './components/doctors/DoctorList';      
 // import AddDoctor from './components/AddDoctor';
 
 const App = () => (
