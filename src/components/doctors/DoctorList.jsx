@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchDoctors, selectDoctors, selectDoctorsStatus, selectDoctorsError } from '../../redux/doctorsSlice';
+import {
+  fetchDoctors, selectDoctors, selectDoctorsStatus, selectDoctorsError,
+} from '../../redux/doctorsSlice';
 
 function DoctorList() {
   const dispatch = useDispatch();
@@ -8,7 +10,6 @@ function DoctorList() {
   const status = useSelector(selectDoctorsStatus);
   const error = useSelector(selectDoctorsError);
 
-  console.log(doctors);
   useEffect(() => {
     dispatch(fetchDoctors());
   }, [dispatch]);
@@ -18,7 +19,12 @@ function DoctorList() {
   }
 
   if (status === 'failed') {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        Error:
+        {error}
+      </div>
+    );
   }
 
   return (
@@ -27,14 +33,20 @@ function DoctorList() {
       {doctors.length === 0 ? (
         <div>No doctors available.</div>
       ) : (
-      <div>
-        {doctors.map((doctor) => (
+        <div>
+          {doctors.map((doctor) => (
             <div key={doctor.id}>
-                <p>{doctor.name} - {doctor.specialty}</p>
-                <img src={doctor.picture} alt={doctor.name} />
+              <p>
+                {doctor.name}
+                {' '}
+                -
+                {' '}
+                {doctor.specialty}
+              </p>
+              <img src={doctor.picture} alt={doctor.name} />
             </div>
-        ))}
-      </div>
+          ))}
+        </div>
       )}
     </div>
   );

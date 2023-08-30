@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Doctor from './components/doctors/DoctorList';      
+import Doctor from './components/doctors/DoctorList';
 // import AddDoctor from './components/doctors/AddDoctor';
-import Navigation from './components/Navigation'; 
+import Navigation from './components/Navigation';
 
 const App = () => (
   <BrowserRouter>
