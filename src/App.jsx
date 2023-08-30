@@ -1,17 +1,10 @@
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Doctor from './components/doctors/DoctorList';
-// import AddDoctor from './components/doctors/AddDoctor';
-import Navigation from './components/Navigation';
+import "./App.css";
+import { BrowserRouter} from "react-router-dom";
+import Layout from "./components/layout";
 
 const App = () => (
   <BrowserRouter>
-    <Navigation />
-    <Routes>
-      <Route path="/" element={<Doctor />} />
-      {/* <Route path="/addDoctor" element={<AddDoctor />} /> */}
-    </Routes>
-
+    <Layout />
   </BrowserRouter>
 );
 
