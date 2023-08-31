@@ -8,7 +8,7 @@ const Navigation = () => (
       <h2>DocBook🩺</h2>
       <ul>
         <li className="nav-item">
-          <NavLink to="/" activeClassName="active" className="nav-item">DOCTORS</NavLink>
+          <NavLink to="/home" activeClassName="active" className="nav-item">DOCTORS</NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="/appointments-form" activeClassName="active">ADD APPOINTMENT</NavLink>
