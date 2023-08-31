@@ -4,6 +4,7 @@ import {
   fetchDoctors, selectDoctors, selectDoctorsStatus, selectDoctorsError,
 } from '../../redux/doctorsSlice';
 
+
 function DoctorList() {
   const dispatch = useDispatch();
   const doctors = useSelector(selectDoctors);
