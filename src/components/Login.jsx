@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/Login.css';
 
@@ -7,14 +7,13 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       await axios.post('http://localhost:3000/users/sign_in', { user: { username, password } });
-      navigate('/layout');
+      window.location.href = '/home';
     } catch (error) {
       if (error.response) {
         const errorData = error.response.data;
