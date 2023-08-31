@@ -13,7 +13,7 @@ function Login() {
 
     try {
       await axios.post('http://localhost:3000/users/sign_in', { user: { username, password } });
-      window.location.href = '/DoctorList';
+      window.location.href = '/home';
     } catch (error) {
       if (error.response) {
         const errorData = error.response.data;

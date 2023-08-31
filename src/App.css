@@ -47,7 +47,7 @@ body {
   padding-left: 10px;
 }
 
-h2 {
+.nav-container h2 {
   font-family: cursive;
   font-size: 40px;
   text-decoration: underline;

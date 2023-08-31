@@ -14,7 +14,7 @@ function Signup() {
 
     try {
       await axios.post('http://localhost:3000/users', { user: { username, email, password } });
-      window.location.href = '/Login';
+      window.location.href = '/';
     } catch (error) {
       if (error.response) {
         const errorData = error.response.data;
