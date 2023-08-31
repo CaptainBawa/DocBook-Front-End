@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/Login.css';
 
@@ -8,14 +8,13 @@ function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
 
     try {
       await axios.post('http://localhost:3000/users', { user: { username, email, password } });
-      navigate('/l');
+      window.location.href = '/Login';
     } catch (error) {
       if (error.response) {
         const errorData = error.response.data;
