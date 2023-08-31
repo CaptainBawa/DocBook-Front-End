@@ -10,7 +10,6 @@ import Appointments from './components/appointments/Appointments';
 import AddDoctor from './components/AddDoctor';
 import DeleteDoctor from './components/DeleteDoctor';
 
-
 const App = () => (
   <BrowserRouter>
     <Routes>
