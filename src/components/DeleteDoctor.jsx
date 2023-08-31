@@ -1,9 +1,8 @@
-import React from "react";
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchDoctors, selectDoctors, selectDoctorsStatus, selectDoctorsError,
-  deleteDoctor
+  deleteDoctor,
 } from '../redux/doctorsSlice';
 
 const DeleteDoctor = () => {
@@ -44,6 +43,7 @@ const DeleteDoctor = () => {
               <td className="border px-4 py-2">{doctor.name}</td>
               <td className="border px-4 py-2">
                 <button
+                  type="submit"
                   className="bg-red-500 text-white px-2 py-1 rounded"
                   onClick={() => handleDelete(doctor.id)}
                 >
