@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Login from './components/Login';
 import Signup from './components/Signin';
 import AddDoctor from './components/AddDoctor';
+import DeleteDoctor from './components/DeleteDoctor';
 
 const App = () => (
   <BrowserRouter>
@@ -12,6 +13,7 @@ const App = () => (
       <Route path="/signup" element={<Signup />} />
       <Route path="/home" element={<Layout />} />
       <Route path="/add-doctor" element={<AddDoctor />} />
+      <Route path="/delete-doctor" element={<DeleteDoctor />} />
     </Routes>
   </BrowserRouter>
 );
