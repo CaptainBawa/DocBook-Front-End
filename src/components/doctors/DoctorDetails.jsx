@@ -75,7 +75,7 @@ function DoctorDetails() {
             {doctor.addresses[0].street}
           </p>
           <p className="mt-2">
-            City:
+            Country:
             {doctor.addresses[0].country}
           </p>
           <p className="mt-2">
