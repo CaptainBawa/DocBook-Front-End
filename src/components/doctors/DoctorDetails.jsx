@@ -36,7 +36,12 @@ function DoctorDetails() {
   }
 
   if (doctorsStatus === 'failed' || appointmentsStatus === 'failed') {
-    return <div>Error: {doctorsError || appointmentsError}</div>;
+    return (
+      <div>
+        Error:
+        {doctorsError || appointmentsError}
+      </div>
+    );
   }
 
   if (!doctor) {
@@ -45,32 +50,48 @@ function DoctorDetails() {
 
   return (
     <>
-    <Navigation />
-    <div className="w-10/12 mx-auto mt-8 object-position: right;">
-      <div className="bg-white p-8 shadow-md rounded-md">
-        <div className="flex items-center">
-          <img
-            src={doctor.picture}
-            alt={doctor.name}
-            className="rounded-full h-16 w-16"
+      <Navigation />
+      <div className="w-10/12 mx-auto mt-8 object-position: right;">
+        <div className="bg-white p-8 shadow-md rounded-md">
+          <div className="flex items-center">
+            <img
+              src={doctor.picture}
+              alt={doctor.name}
+              className="rounded-full h-16 w-16"
             />
-          <h2 className="text-lg font-semibold ml-4">{doctor.name}</h2>
+            <h2 className="text-lg font-semibold ml-4">{doctor.name}</h2>
+          </div>
+          <p className="mt-2 text-gray-600">{doctor.specialty}</p>
+          <p className="mt-2">
+            Email:
+            {doctor.email}
+          </p>
+          <p className="mt-2">
+            Phone:
+            {doctor.phone_number}
+          </p>
+          <p className="mt-2">
+            Adress:
+            {doctor.addresses[0].street}
+          </p>
+          <p className="mt-2">
+            City:
+            {doctor.addresses[0].country}
+          </p>
+          <p className="mt-2">
+            Price: $
+            {doctor.price}
+          </p>
+          <button
+            type="button"
+            className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
+            onClick={handleAppointment}
+          >
+            Reserve Appointment
+          </button>
         </div>
-        <p className="mt-2 text-gray-600">{doctor.specialty}</p>
-        <p className="mt-2">Email: {doctor.email}</p>
-        <p className="mt-2">Phone: {doctor.phone_number}</p>
-        <p className="mt-2">Adress: {doctor.addresses[0].street}</p>
-        <p className="mt-2">City: {doctor.addresses[0].country}</p>
-        <p className="mt-2">Price: ${doctor.price}</p>
-        <button
-          className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
-          onClick={handleAppointment}
-        >
-          Reserve Appointment
-        </button>
       </div>
-    </div>
-          </>
+    </>
   );
 }
 

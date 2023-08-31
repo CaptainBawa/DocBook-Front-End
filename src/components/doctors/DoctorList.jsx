@@ -72,7 +72,12 @@ function DoctorList() {
     <div className="w-10/12 flex flex-col mx-auto">
       <h2 className="text-center font-bold text-2xl">Doctor List</h2>
       {status === 'loading' && <div>Loading...</div>}
-      {status === 'failed' && <div>Error: {error}</div>}
+      {status === 'failed' && (
+      <div>
+        Error:
+        {error}
+      </div>
+      )}
       <div className="flex">
         {doctors.map((doctor) => (
           <div key={doctor.id}>
@@ -80,7 +85,10 @@ function DoctorList() {
             <Link to={`/doctors/${doctor.id}`}>
               <div className="bg-white p-4 shadow-md rounded-full">
                 <p className="text-lg font-semibold mb-2">
-                  {doctor.name} - {doctor.specialty}
+                  {doctor.name}
+                  {' '}
+                  -
+                  {doctor.specialty}
                 </p>
                 <img
                   src={doctor.picture}
