@@ -113,6 +113,44 @@ function AddDoctor() {
           placeholder="Doctor's Price"
           className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
         />
+        <input
+          type="text"
+          name="country"
+          value={formData.addresses_attributes[0].country}
+          onChange={(e) => handleAddressChange(e, 0)}
+          placeholder="Doctor's country"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
+
+        />
+
+        <input
+          type="text"
+          name="city"
+          value={formData.addresses_attributes[0].city}
+          onChange={(e) => handleAddressChange(e, 0)}
+          placeholder="Doctor's city"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
+
+        />
+
+        <input
+          type="text"
+          name="state"
+          value={formData.addresses_attributes[0].state}
+          onChange={(e) => handleAddressChange(e, 0)}
+          placeholder="Doctor's state"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
+
+        />
+
+        <input
+          type="text"
+          name="street"
+          value={formData.addresses_attributes[0].street}
+          onChange={(e) => handleAddressChange(e, 0)}
+          placeholder="Doctor's street"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
+        />
         <button
           type="submit"
           className="w-full bg-lime-500 text-white px-4 py-2 rounded-lg hover:bg-lime-600 transition duration-300"
