@@ -1,7 +1,7 @@
 .login-container {
   background-color: #111;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 10% auto auto auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -14,6 +14,7 @@
   text-align: center;
   rotate: 0deg;
   margin: 0;
+  font-size: 3.5em;
 }
 
 .login-container p {
