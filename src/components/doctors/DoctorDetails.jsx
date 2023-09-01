@@ -1,4 +1,3 @@
-// src/components/doctors/DoctorDetails.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
