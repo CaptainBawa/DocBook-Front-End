@@ -29,20 +29,28 @@ function Signup() {
   };
 
   return (
-    <div className="login-container">
-      <h2>Signup</h2>
-      <p>
-        Already have an account?
-        {' '}
-        <Link to="/">Login</Link>
+    <div className="bg-pic">
+      <p className="welcome">
+        We&rsquo;re delighted to have you here, connecting
+        you with the best healthcare professionals at
+        your fingertips. Your journey to better health
+        begins now.
       </p>
-      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-      <form onSubmit={handleSignup}>
-        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} className="input-field" />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="input-field" />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="input-field" />
-        <button type="submit" className="login-button">Signup</button>
-      </form>
+      <div className="login-container">
+        <h2>Signup</h2>
+        <p>
+          Already have an account?
+          {' '}
+          <Link to="/">Login</Link>
+        </p>
+        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+        <form onSubmit={handleSignup}>
+          <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} className="input-field" />
+          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="input-field" />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="input-field" />
+          <button type="submit" className="login-button">Signup</button>
+        </form>
+      </div>
     </div>
   );
 }
