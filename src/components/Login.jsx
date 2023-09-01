@@ -28,33 +28,41 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <p>
-        Don&rsquo;t have an account?
-        {' '}
-        <Link to="/signup">Sign up</Link>
+    <div className="bg-pic">
+      <p className="welcome">
+        We&rsquo;re delighted to have you here, connecting
+        you with the best healthcare professionals at
+        your fingertips. Your journey to better health
+        begins now.
       </p>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="input-field"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="input-field"
-        />
-        <button type="submit" className="login-button">
-          Login
-        </button>
-      </form>
+      <div className="login-container">
+        <h2>Login</h2>
+        <p>
+          Don&rsquo;t have an account?
+          {' '}
+          <Link to="/signup">Sign up</Link>
+        </p>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="input-field"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-field"
+          />
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
