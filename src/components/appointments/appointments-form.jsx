@@ -1,90 +1,102 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createAppointment } from "../../redux/appointmentsSlice";
-import { selectDoctors, fetchDoctors } from "../../redux/doctorsSlice";
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createAppointment } from '../../redux/appointmentsSlice';
+import { selectUsers, fetchUsers } from '../../redux/usersSlice';
+import { selectDoctors, fetchDoctors } from '../../redux/doctorsSlice';
 
-const BookAppointment = () => {
-  const doctors = useSelector(selectDoctors);
-  const [appointmentDate, setAppointmentDate] = useState("");
-  const [city, setCity] = useState("");
-  const [doctor, SetDoctor] = useState("");
-
+function BookAppointment() {
   const dispatch = useDispatch();
+  const users = useSelector(selectUsers);
+  const doctors = useSelector(selectDoctors);
+
   useEffect(() => {
-    if (doctors.length === 0) {
+    if (!users.length) {
+      dispatch(fetchUsers());
+    }
+    if (!doctors.length) {
       dispatch(fetchDoctors());
     }
-  }, [dispatch, doctors]);
-  console.log(doctors);
+  }, [dispatch, users, doctors]);
 
-  const cities = ["New York", "Los Angeles", "Chicago", "Houston"];
+  const loggedInUser = users.find((user) => user.username);
+  const userId = loggedInUser ? loggedInUser.id : '';
 
-  const handleSubmit = (e) => {
+  const cities = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Miami'];
+
+  const [formData, setFormData] = useState({
+    appointment_date: '',
+    doctor_id: '',
+    user_id: '',
+    city: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formattedDate = new Date(appointmentDate).toISOString().split("T")[0];
-
-    const appointmentData = {
-      appointment_date: formattedDate,
-      city: city,
-      doctor: doctor,
-      user_id: userId,
-      doctor_id: "",
-    };
-
-    dispatch(createAppointment(appointmentData));
-  };
-
-  const handleChangeDate = (e) => {
-    setAppointmentDate(e.target.value);
-  };
-
-  const handleChangeCity = (e) => {
-    setCity(e.target.value);
-  };
-  const handleChangeDoctor = (e) => {
-    SetDoctor(e.target.value);
+    try {
+      await dispatch(createAppointment({ ...formData, user_id: userId }));
+      setFormData({
+        appointment_date: '',
+        doctor_id: '',
+        user_id: '',
+        city: '',
+      });
+      window.location.href = '/my-appointments';
+    } catch (error) {
+      throw new Error('Failed to book appointment');
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <select name="doctor" value={doctor} onChange={handleChangeDoctor}>
-          <option value="">Select doctor</option>
+    <div>
+      <h2>Book Appointment</h2>
+      <form onSubmit={handleSubmit}>
+        <select
+          name="doctor_id"
+          value={formData.doctor_id}
+          onChange={handleInputChange}
+        >
+          <option value="">Select a Doctor</option>
           {doctors.map((doctor) => (
             <option key={doctor.id} value={doctor.id}>
               {doctor.name}
             </option>
           ))}
         </select>
-      </div>
-      <div>
-        <label>
-          Appointment Date:
-          <input
-            type="date"
-            name="appointmentDate"
-            value={appointmentDate}
-            onChange={handleChangeDate}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          City:
-          <select name="city" value={city} onChange={handleChangeCity}>
-            <option value="">Select a city</option>
-            {cities.map((cityOption) => (
-              <option key={cityOption} value={cityOption}>
-                {cityOption}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <button type="submit">Book appointment</button>
-    </form>
+
+        <input
+          type="date"
+          name="appointment_date"
+          value={formData.appointment_date}
+          onChange={handleInputChange}
+          placeholder="Select Appointment Date"
+        />
+
+        <select
+          name="city"
+          value={formData.city}
+          onChange={handleInputChange}
+        >
+          <option value="">Select a City</option>
+          {cities.map((city) => (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          ))}
+        </select>
+
+        <button type="submit">Book Appointment</button>
+      </form>
+    </div>
   );
-};
+}
 
 export default BookAppointment;

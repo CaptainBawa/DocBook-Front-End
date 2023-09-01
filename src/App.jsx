@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Login from './components/Login';
 import Signup from './components/Signin';
-import BookAppointment from "./components/appointments/appointments-form";
+import BookAppointment from './components/appointments/appointments-form';
 
 const App = () => (
   <BrowserRouter>
