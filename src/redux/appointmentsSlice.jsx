@@ -26,12 +26,28 @@ export const createAppointment = createAsyncThunk('appointments/createAppointmen
   }
 });
 
+export const deleteAppointment = createAsyncThunk('appointments/deleteAppointment', async (appointmentId) => {
+  try {
+    await axios.delete(`http://localhost:3000/appointments/${appointmentId}`);
+    return appointmentId;
+  } catch (error) {
+    throw new Error('Failed to delete the appointment');
+  }
+});
+
 const appointmentsSlice = createSlice({
   name: 'appointments',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(deleteAppointment.fulfilled, (state, action) => {
+        state.appointments = state.appointments.filter((appointment) => appointment.id !== action.payload);
+      })
+      .addCase(deleteAppointment.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
       .addCase(fetchAppointments.pending, (state) => {
         state.status = 'loading';
       })
