@@ -1,7 +1,8 @@
 // src/components/doctors/DoctorDetails.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+
 import Navigation from '../Navigation';
 import {
   selectDoctors,
@@ -51,44 +52,67 @@ function DoctorDetails() {
   return (
     <>
       <Navigation />
-      <div className="w-10/12 mx-auto mt-8 object-position: right;">
-        <div className="bg-white p-8 shadow-md rounded-md">
-          <div className="flex items-center">
+      <div>
+        <div>
+          <div>
             <img
               src={doctor.picture}
               alt={doctor.name}
-              className="rounded-full h-16 w-16"
+              className="doc-img"
             />
-            <h2 className="text-lg font-semibold ml-4">{doctor.name}</h2>
           </div>
-          <p className="mt-2 text-gray-600">{doctor.specialty}</p>
-          <p className="mt-2">
-            Email:
-            {doctor.email}
-          </p>
-          <p className="mt-2">
-            Phone:
-            {doctor.phone_number}
-          </p>
-          <p className="mt-2">
-            Adress:
-            {doctor.addresses[0].street}
-          </p>
-          <p className="mt-2">
-            Country:
-            {doctor.addresses[0].country}
-          </p>
-          <p className="mt-2">
-            Price: $
-            {doctor.price}
-          </p>
+          <div className="detials-div">
+            <h2 className="lead">{doctor.name}</h2>
+            <p className="pop1">
+              {' '}
+              -
+              {doctor.specialty}
+            </p>
+            <p className="pop  popa">
+              <strong>Email: &nbsp;  </strong>
+              {doctor.email}
+            </p>
+            <p className="pop">
+              <strong>Phone: &nbsp;  </strong>
+              {doctor.phone_number}
+            </p>
+            <p className="pop popb">
+              <strong>Address: &nbsp;  </strong>
+              {doctor.addresses[0].street}
+            </p>
+            <p className="pop">
+              <strong>City: &nbsp;  </strong>
+              {doctor.addresses[0].city}
+            </p>
+            <p className="pop popb">
+              <strong>State: &nbsp;  </strong>
+              {doctor.addresses[0].state}
+            </p>
+            <p className="pop">
+              <strong>Country: &nbsp;  </strong>
+              {doctor.addresses[0].country}
+            </p>
+            <p className="pop popc">
+              <strong>Price: &nbsp;  </strong>
+              {' '}
+              $
+              {doctor.price}
+            </p>
+          </div>
           <button
             type="button"
-            className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
             onClick={handleAppointment}
+            className="pop-btn mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md"
           >
             Reserve Appointment
           </button>
+          <button
+            type="button"
+            className="popi-btn mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md"
+          >
+            <NavLink to="/home">&larr;</NavLink>
+          </button>
+
         </div>
       </div>
     </>
