@@ -4,7 +4,7 @@
 
 /* Additional Tailwind CSS styles */
 body {
-  background-color: #d9dbe0;
+  background-color: #fff;
 }
 
 .nav-container {
@@ -57,4 +57,85 @@ body {
   margin-top: 90px;
   margin-bottom: -80px;
   font-weight: bolder;
+}
+
+.doc-img {
+  margin-top: -45rem;
+  margin-left: 252px;
+  height: 720px;
+  width: 65%;
+}
+
+.pop {
+  width: 18%;
+  margin-left: 82%;
+  padding: 1%;
+  outline: none;
+  border: none;
+}
+
+.popa {
+  background-color: #d9dbe0;
+}
+
+.popb {
+  background-color: #d9dbe0;
+}
+
+.popc {
+  background-color: #d9dbe0;
+}
+
+.pop1 {
+  text-align: right;
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.pop-btn {
+  margin-left: 85%;
+  border-radius: 40px;
+  background-color: #97bf0f;
+  margin-top: 3%;
+}
+
+.popi-btn {
+  margin-left: 252px;
+  margin-top: -13px;
+  border-radius: 0;
+  background-color: #97bf0f;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.lead {
+  text-align: right;
+  margin-top: -40rem;
+  font-size: 26px;
+  margin-right: 15px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+.Biggie {
+  width: 80%;
+  margin-left: 270px;
+  margin-top: -40rem;
+}
+
+.cancel-app {
+  background-color: #97bf0f;
+}
+
+.appointments-body-background {
+  background-color: #d9dbe0;
 }
