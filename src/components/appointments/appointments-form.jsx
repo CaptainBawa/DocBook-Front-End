@@ -56,7 +56,7 @@ function BookAppointment() {
   };
 
   return (
-    <div>
+    <div className="w-full bg-lime-500">
       <h2>Book Appointment</h2>
       <form onSubmit={handleSubmit}>
         <select
