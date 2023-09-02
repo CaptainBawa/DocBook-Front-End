@@ -63,8 +63,8 @@ function AddDoctor() {
     }
   };
   return (
-    <div className=" top-0 left-0 w-full h-screen flex justify-center items-center">
-      <div className="bg-gray-100 p-6 rounded-lg shadow-md w-1/4">
+    <div className=" flex justify-center items-center h-full">
+      <div className="bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-md ">
         <form onSubmit={handleSubmit} className="space-y-6">
           <input
             type="text"
