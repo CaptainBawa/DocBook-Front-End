@@ -49,6 +49,7 @@ function Appointments() {
               <th className="px-4 py-2">Doctor's name</th>
               <th className="px-4 py-2">Fees($)</th>
               <th className="px-4 py-2">Doctor's contact</th>
+              <th className="px-4 py-2">Appointments Location</th>
               <th className="px-4 py-2">Actions</th>
             </tr>
           </thead>
@@ -60,6 +61,7 @@ function Appointments() {
                 <td className="border px-4 py-2">{appointment.doctor.name}</td>
                 <td className="border px-4 py-2">{appointment.doctor.price}</td>
                 <td className="border px-4 py-2">{appointment.doctor.email}</td>
+                <td className="border px-4 py-2">{appointment.city}</td>
                 <td className="border px-4 py-2">
                   <button
                     type="button"
