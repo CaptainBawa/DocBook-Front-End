@@ -60,6 +60,7 @@ body {
 }
 
 @import './styles/DoctorList.css';
+
 .doc-img {
   margin-top: -45rem;
   margin-left: 252px;
