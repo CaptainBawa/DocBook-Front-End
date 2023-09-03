@@ -38,20 +38,20 @@ function DoctorList() {
   };
 
   return (
-    <div className="bg-gray-100 w-3/4 ">
-      <div className="container  px-4 py-8">
-        <h2 className="text-2xl font-semibold text-gray-800">Doctor List</h2>
+    <div className="bg-gray-100 w-11/12 sm:w-10/12 md:w-10/12 lg:w-3/4 mx-auto">
+      <div className="container px-2 sm:px-4 py-4 sm:py-8">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 text-center mb-4 sm:mb-6">Doctor List</h2>
         <div className="mt-4 relative w-full">
           <div
             id="default-carousel"
-            className="relative w-full "
+            className="relative w-full"
             data-carousel="slide"
           >
-            <div className="relative h-96  flex items-center justify-center">
+            <div className="relative h-60 sm:h-72 md:h-96 lg:h-96 xl:h-96 2xl:h-96 flex gap-2 sm:gap-4 items-center justify-center">
               {doctors.map((doctor, index) => (
                 <div
                   key={doctor.id}
-                  className={`w-40 h-40 md:w-32 md:h-32 bg-white rounded-full mx-2 cursor-pointer transform ${
+                  className={`w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-full mx-2 cursor-pointer transform ${
                     index === currentSlide ? 'scale-110' : 'scale-100'
                   } transition-transform ease-in-out duration-500`}
                   onClick={() => goToSlide(index)}
@@ -63,16 +63,16 @@ function DoctorList() {
                       className="w-full h-full object-cover rounded-full"
                     />
                   </Link>
-                  <div className="text-sm text-center">{doctor.name}</div>
+                  <div className="text-xs sm:text-sm text-center">{doctor.name}</div>
                 </div>
               ))}
             </div>
-            <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <div className="absolute z-30 flex space-x-2 sm:space-x-3 -translate-x-1/2 bottom-3 sm:bottom-5 left-1/2">
               {doctors.map((_, index) => (
                 <button
                   key={index}
                   type="button"
-                  className={`w-3 h-3 rounded-full ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
                     index === currentSlide ? 'bg-lime-500' : 'bg-gray-300'
                   }`}
                   aria-current={index === currentSlide ? 'true' : 'false'}
@@ -84,13 +84,13 @@ function DoctorList() {
             </div>
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 left-2 z-30 flex items-center justify-center h-10 w-10 rounded-full bg-white/30 dark:bg-gray-800/30 cursor-pointer group focus:outline-none"
+              className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 z-30 flex items-center justify-center h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white/30 dark:bg-gray-800/30 cursor-pointer group focus:outline-none"
               data-carousel-prev
               onClick={prevSlide}
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-lime-500/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <span className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-lime-500/50 dark:group-hover:bg-gray-800/60 group-focus:ring-2 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                 <svg
-                  className="w-4 h-4 text-white dark:text-white transform rotate-360"
+                  className="w-3 h-3 sm:w-4 sm:h-4 text-white dark:text-white transform rotate-360"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -109,13 +109,13 @@ function DoctorList() {
             </button>
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 right-2 z-30 flex items-center justify-center h-10 w-10 rounded-full bg-white/30 dark:bg-gray-800/30 cursor-pointer group focus:outline-none"
+              className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 z-30 flex items-center justify-center h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white/30 dark:bg-gray-800/30 cursor-pointer group focus:outline-none"
               data-carousel-next
               onClick={nextSlide}
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-lime-500/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <span className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-lime-500/50 dark:group-hover:bg-gray-800/60 group-focus:ring-2 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                 <svg
-                  className="w-4 h-4 text-white dark:text-white"
+                  className="w-3 h-3 sm:w-4 sm:h-4 text-white dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -136,6 +136,7 @@ function DoctorList() {
         </div>
       </div>
     </div>
+
   );
 }
 
