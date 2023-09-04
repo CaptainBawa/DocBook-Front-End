@@ -4,7 +4,7 @@ import { SlMenu } from 'react-icons/sl';
 // import './Navigation.css'; // Import your CSS file
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -12,7 +12,7 @@ const Navigation = () => {
 
   return (
     <div className="wrapper">
-      <div className="hamburger p-4 text-3xl" onClick={toggleMenu}>
+      <div className="hamburger p-4 text-3xl lg:hidden" onClick={toggleMenu}>
         <SlMenu />
       </div>
       <nav className={`nav-container ${isMenuOpen ? 'menu-open' : ''}`}>
