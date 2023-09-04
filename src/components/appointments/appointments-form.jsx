@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createAppointment } from '../../redux/appointmentsSlice';
 import { selectUsers, fetchUsers } from '../../redux/usersSlice';
 import { selectDoctors, fetchDoctors } from '../../redux/doctorsSlice';
+import BookAppointmentNavigation from './BookAppointmentNavigation';
 
 function BookAppointment() {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ function BookAppointment() {
   return (
     <div className="min-h-screen bg-lime-400 flex justify-center items-center flex-col">
       <h2 className="font-bold text-2xl underline mb-4">Book Appointment</h2>
+      <BookAppointmentNavigation />
       <form onSubmit={handleSubmit} className="px-3 flex flex-col w-full space-y-6 max-w-xl">
         <select
           name="doctor_id"
