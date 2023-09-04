@@ -76,7 +76,7 @@ function BookAppointmentContainer() {
         } z-50`}
       >
         <button className="hamburger mb-4" type="button" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faXmark} />
+          <FontAwesomeIcon icon={faXmark} className="text-2xl w-6 h-6" />
         </button>
         <div className={`nav-links ${menuOpen ? 'visible' : 'hidden'}`}>
           <ul className=" space-y-6">
