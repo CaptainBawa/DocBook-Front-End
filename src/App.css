@@ -16,6 +16,8 @@ body {
   width: 250px;
   background-color: #fff;
   z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
 }
 
 .nav-item {
@@ -57,68 +59,11 @@ body {
   padding-left: 10px;
   font-weight: bolder;
 }
-.header_nav{
+
+.header_nav {
   position: relative;
-  top:-100px;
+  top: -100px;
 }
-
-
-/* .doc-img {
-  margin-top: -45rem;
-  margin-left: 252px;
-  height: 720px;
-  width: 65%;
-}
-
-.pop {
-  width: 18%;
-  margin-left: 82%;
-  padding: 1%;
-  outline: none;
-  border: none;
-}
-
-.popa {
-  background-color: #d9dbe0;
-}
-
-.popb {
-  background-color: #d9dbe0;
-}
-
-.popc {
-  background-color: #d9dbe0;
-}
-
-.pop1 {
-  text-align: right;
-  font-size: 12px;
-  margin-bottom: 20px;
-  margin-right: 15px;
-}
-
-.pop-btn {
-  margin-left: 85%;
-  border-radius: 40px;
-  background-color: #97bf0f;
-  margin-top: 3%;
-}
-
-.popi-btn {
-  margin-left: 252px;
-  margin-top: -13px;
-  border-radius: 0;
-  background-color: #97bf0f;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-.lead {
-  text-align: right;
-  margin-top: -40rem;
-  font-size: 26px;
-  margin-right: 15px;
-} */
 
 table {
   border-collapse: collapse;
@@ -143,22 +88,22 @@ th {
 .appointments-body-background {
   background-color: #d9dbe0;
 }
+
 /* ----------DROP DOWN MENU */
- .menu {
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
+
+/* Menu open styles */
+.nav-container.menu-open {
+  transform: translateX(0);
+}
+
+.menu.menu-open {
+  transform: translateX(0);
+}
+
+/* syles for mobile only */
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    z-index: 7000;
   }
-  
-  /* Menu open styles */
-  .nav-container.menu-open {
-    transform: translateX(0);
-  }
-  
-  .menu.menu-open {
-    transform: translateX(0);
-  }
-  
- /* syles for mobile only */
-  @media (max-width: 768px) {
-    
-  }
+}
