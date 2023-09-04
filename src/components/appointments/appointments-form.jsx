@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createAppointment } from '../../redux/appointmentsSlice';
-import { selectUsers, fetchUsers } from '../../redux/usersSlice';
-import { selectDoctors, fetchDoctors } from '../../redux/doctorsSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import { selectDoctors, fetchDoctors } from '../../redux/doctorsSlice';
+import { selectUsers, fetchUsers } from '../../redux/usersSlice';
+import { createAppointment } from '../../redux/appointmentsSlice';
 
 function BookAppointmentContainer() {
   const dispatch = useDispatch();
@@ -27,6 +27,17 @@ function BookAppointmentContainer() {
     setMenuOpen(!menuOpen);
   };
 
+  const [formData, setFormData] = useState({
+    appointment_date: '',
+    doctor_id: '',
+    user_id: '', // Initialize user_id
+    city: '',
+  });
+
+  // Initialize userId based on logged-in user
+  const loggedInUser = users.find((user) => user.username);
+  const userId = loggedInUser ? loggedInUser.id : '';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -35,7 +46,7 @@ function BookAppointmentContainer() {
       setFormData({
         appointment_date: '',
         doctor_id: '',
-        user_id: '',
+        user_id: '', // Reset user_id to an empty string
         city: '',
       });
       window.location.href = '/my-appointments';
@@ -44,17 +55,7 @@ function BookAppointmentContainer() {
     }
   };
 
-  const loggedInUser = users.find((user) => user.username);
-  const userId = loggedInUser ? loggedInUser.id : '';
-
   const cities = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Miami'];
-
-  const [formData, setFormData] = useState({
-    appointment_date: '',
-    doctor_id: '',
-    user_id: '',
-    city: '',
-  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -66,19 +67,19 @@ function BookAppointmentContainer() {
 
   return (
     <div className="min-h-screen bg-lime-400 flex flex-col">
-      <button className="hamburger" type="button" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={faBars} />
+      <button className={`hamburger fixed top-4 left-4 z-50 ${menuOpen ? 'hidden' : ''}`} type="button" onClick={toggleMenu}>
+        <FontAwesomeIcon icon={faBars} className="text-2xl w-6 h-6" />
       </button>
       <div
-        className={`fixed h-screen bg-white top-0 left-0 transition-transform transform ${
+        className={`fixed h-screen bg-white bg-opacity-75  px-4 top-0 left-0 transition-transform transform ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         } z-50`}
       >
-        <button className="hamburger" type="button" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} />
+        <button className="hamburger mb-4" type="button" onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faXmark} />
         </button>
         <div className={`nav-links ${menuOpen ? 'visible' : 'hidden'}`}>
-          <ul>
+          <ul className=" space-y-6">
             <li className="nav-item">
               <NavLink to="/home" activeClassName="active">
                 DOCTORS
