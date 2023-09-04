@@ -7,6 +7,7 @@ import { createDoctor } from '../redux/doctorsSlice';
 
 function AddDoctor() {
   const dispatch = useDispatch();
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,6 +44,10 @@ function AddDoctor() {
     e.preventDefault();
     try {
       await dispatch(createDoctor(formData));
+      setShowSuccessAlert(true); // Show the success alert
+      setTimeout(() => {
+        setShowSuccessAlert(false); // Hide the success alert after 1 second
+      }, 1000);
       setFormData({
         name: '',
         email: '',
@@ -77,6 +82,15 @@ function AddDoctor() {
       </section>
       <div className=" flex justify-center items-center h-full">
         <div className="bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-md ">
+          <div className=" flex justify-center items-center h-full">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-md ">
+              {showSuccessAlert && (
+              <div className="bg-green-200 text-green-800 p-2 rounded-lg mb-4">
+                User saved successfully
+              </div>
+              )}
+            </div>
+          </div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <input
               type="text"
