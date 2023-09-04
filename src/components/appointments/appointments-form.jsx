@@ -56,13 +56,14 @@ function BookAppointment() {
   };
 
   return (
-    <div className="w-full bg-lime-500">
-      <h2>Book Appointment</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="min-h-screen bg-lime-400 flex justify-center items-center flex-col">
+      <h2 className="font-bold text-2xl underline mb-4">Book Appointment</h2>
+      <form onSubmit={handleSubmit} className="px-3 flex flex-col w-full space-y-6 max-w-xl">
         <select
           name="doctor_id"
           value={formData.doctor_id}
           onChange={handleInputChange}
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
         >
           <option value="">Select a Doctor</option>
           {doctors.map((doctor) => (
@@ -78,12 +79,14 @@ function BookAppointment() {
           value={formData.appointment_date}
           onChange={handleInputChange}
           placeholder="Select Appointment Date"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
         />
 
         <select
           name="city"
           value={formData.city}
           onChange={handleInputChange}
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
         >
           <option value="">Select a City</option>
           {cities.map((city) => (
@@ -93,7 +96,7 @@ function BookAppointment() {
           ))}
         </select>
 
-        <button type="submit">Book Appointment</button>
+        <button type="submit" className="w-full bg-lime-500 text-white px-4 py-2 rounded-lg hover:bg-lime-600 transition duration-300">Book Appointment</button>
       </form>
     </div>
   );
