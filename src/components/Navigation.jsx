@@ -11,18 +11,17 @@ const Navigation = () => {
   };
 
   return (
-    <>
+    <div className="wrapper">
+      <div className="hamburger p-4 text-3xl" onClick={toggleMenu}>
+        <SlMenu />
+      </div>
       <nav className={`nav-container ${isMenuOpen ? 'menu-open' : ''}`}>
-        <div className="hamburger p-4 text-3xl" onClick={toggleMenu}>
-          <SlMenu />
-        </div>
-        
+
         <ul className={`menu ${isMenuOpen ? 'menu-open' : ''}`}>
-        <div className="header_nav">
-      <h2>DocBook🩺</h2>
+          <div className="header_nav">
+            <h2>DocBook🩺</h2>
 
-        </div>
-
+          </div>
 
           <li className="nav-item">
             <NavLink to="/home" activeClassName="active" className="nav-item">
@@ -51,7 +50,8 @@ const Navigation = () => {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
+
   );
 };
 
