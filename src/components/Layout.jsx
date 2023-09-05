@@ -12,9 +12,6 @@ const Layout = () => (
     <div className="w-10/12 flex items-center">
       <DoctorList />
     </div>
-    <div className="w-10/12 flex items-center">
-      <DoctorDetails />
-    </div>
   </div>
 );
 
