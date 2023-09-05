@@ -45,7 +45,6 @@ function DoctorList() {
         </h2>
         <div className="mt-4 relative w-full ">
 
-          {/* Show this content on mobile screens only */}
           <div className="lg:hidden flex justify-center w-56">
             <div className="">
               {doctors.map((doctor) => (
@@ -66,7 +65,6 @@ function DoctorList() {
             </div>
           </div>
 
-          {/* Show this content on screens larger than lg */}
           <div className="hidden lg:block">
             <div
               id="default-carousel"

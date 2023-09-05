@@ -1,17 +1,17 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
 
 import {
   selectDoctors,
   selectDoctorsStatus,
   selectDoctorsError,
-} from "../../redux/doctorsSlice";
+} from '../../redux/doctorsSlice';
 import {
   selectAppointmentsStatus,
   selectAppointmentsError,
   createAppointment,
-} from "../../redux/appointmentsSlice";
+} from '../../redux/appointmentsSlice';
 
 function DoctorDetails() {
   const { doctorId } = useParams();
@@ -30,11 +30,11 @@ function DoctorDetails() {
     dispatch(createAppointment({ doctor_id: doctor.id }));
   };
 
-  if (doctorsStatus === "loading" || appointmentsStatus === "loading") {
+  if (doctorsStatus === 'loading' || appointmentsStatus === 'loading') {
     return <div>Loading...</div>;
   }
 
-  if (doctorsStatus === "failed" || appointmentsStatus === "failed") {
+  if (doctorsStatus === 'failed' || appointmentsStatus === 'failed') {
     return (
       <div>
         Error:
@@ -43,7 +43,6 @@ function DoctorDetails() {
     );
   }
 
-  // checking if doctor exist
   if (!doctor) {
     return <div className="hidden">Doctor not found</div>;
   }
@@ -64,18 +63,33 @@ function DoctorDetails() {
             <p className="text-xl text-gray-600 mb-2">{doctor.specialty}</p>
             <div className="text-gray-800">
               <p className="mb-2">
-                <strong>Email:</strong> {doctor.email}
+                <strong>Email:</strong>
+                {' '}
+                {doctor.email}
               </p>
               <p className="mb-2">
-                <strong>Phone:</strong> {doctor.phone_number}
+                <strong>Phone:</strong>
+                {' '}
+                {doctor.phone_number}
               </p>
               <p className="mb-2">
-                <strong>Address:</strong> {doctor.addresses[0].street},{" "}
-                {doctor.addresses[0].city}, {doctor.addresses[0].state},{" "}
+                <strong>Address:</strong>
+                {' '}
+                {doctor.addresses[0].street}
+                ,
+                {' '}
+                {doctor.addresses[0].city}
+                ,
+                {doctor.addresses[0].state}
+                ,
+                {' '}
                 {doctor.addresses[0].country}
               </p>
               <p className="mb-2">
-                <strong>Price:</strong> ${doctor.price}
+                <strong>Price:</strong>
+                {' '}
+                $
+                {doctor.price}
               </p>
             </div>
             <button
