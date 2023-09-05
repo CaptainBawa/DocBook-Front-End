@@ -38,7 +38,7 @@ function DoctorList() {
   };
 
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-gray-100 w-full">
       <div className="container px-8 py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 text-center mb-4 sm:mb-6">
           Doctor List
