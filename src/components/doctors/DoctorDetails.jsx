@@ -43,13 +43,11 @@ function DoctorDetails() {
     );
   }
 
-  // checking if doctor exist
   if (!doctor) {
     return <div className="hidden">Doctor not found</div>;
   }
 
   return (
-
     <div className="bg-gray-100 py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -62,9 +60,7 @@ function DoctorDetails() {
             <h2 className="text-3xl font-semibold text-gray-800 mt-6">
               {doctor.name}
             </h2>
-            <p className="text-xl text-gray-600 mb-2">
-              {doctor.specialty}
-            </p>
+            <p className="text-xl text-gray-600 mb-2">{doctor.specialty}</p>
             <div className="text-gray-800">
               <p className="mb-2">
                 <strong>Email:</strong>
@@ -84,7 +80,6 @@ function DoctorDetails() {
                 {' '}
                 {doctor.addresses[0].city}
                 ,
-                {' '}
                 {doctor.addresses[0].state}
                 ,
                 {' '}
@@ -102,7 +97,7 @@ function DoctorDetails() {
               onClick={handleAppointment}
               className="mt-4  bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md transition duration-300 ease-in-out"
             >
-              Reserve Appointment
+              <NavLink to="/appointments-form"> Reserve Appointment </NavLink>
             </button>
             <button
               type="button"
@@ -110,14 +105,10 @@ function DoctorDetails() {
             >
               <NavLink to="/home">&larr; Go Back</NavLink>
             </button>
-
           </div>
-
         </div>
-
       </div>
     </div>
-
   );
 }
 
