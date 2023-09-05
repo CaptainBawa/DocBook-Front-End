@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SlMenu } from 'react-icons/sl';
 import Logout from './Logout';
-// import './Navigation.css'; // Import your CSS file
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);

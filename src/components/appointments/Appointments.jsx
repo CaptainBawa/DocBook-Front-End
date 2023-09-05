@@ -30,9 +30,9 @@ function Appointments() {
   }, [dispatch]);
   return (
 
-    <>
+    <div className="flex">
       <Navigation />
-      <div className="Biggie">
+      <div className="w-5/6 flex justify-center flex-col">
         <h2 className="text-center font-bold text-2xl">Appointments</h2>
         {status === 'loading' && <div>Loading...</div>}
         {status === 'failed' && (
@@ -41,28 +41,28 @@ function Appointments() {
             {error}
           </div>
         )}
-        <table className="table-auto w-full">
+        <table className="table-auto w-3/6 md:w-full items-center">
           <thead>
             <tr>
-              <th className="px-4 py-2">Date</th>
-              <th className="px-4 py-2">Patient's name</th>
-              <th className="px-4 py-2">Doctor's name</th>
-              <th className="px-4 py-2">Fees($)</th>
-              <th className="px-4 py-2">Doctor's contact</th>
-              <th className="px-4 py-2">Appointments Location</th>
-              <th className="px-4 py-2">Actions</th>
+              <th className="">Date</th>
+              <th className="">Patient's name</th>
+              <th className="">Doctor's name</th>
+              <th className="">Fees($)</th>
+              <th className="">Doctor's contact</th>
+              <th className="">Appointments Location</th>
+              <th className="">Actions</th>
             </tr>
           </thead>
           <tbody>
             {appointments.map((appointment) => (
               <tr key={appointment.id}>
-                <td className="border px-4 py-2">{appointment.appointment_date}</td>
-                <td className="border px-4 py-2">{appointment.user.username}</td>
-                <td className="border px-4 py-2">{appointment.doctor.name}</td>
-                <td className="border px-4 py-2">{appointment.doctor.price}</td>
-                <td className="border px-4 py-2">{appointment.doctor.email}</td>
-                <td className="border px-4 py-2">{appointment.city}</td>
-                <td className="border px-4 py-2">
+                <td className="border py-2">{appointment.appointment_date}</td>
+                <td className="border py-2">{appointment.user.username}</td>
+                <td className="border py-2">{appointment.doctor.name}</td>
+                <td className="border py-2">{appointment.doctor.price}</td>
+                <td className="border py-2">{appointment.doctor.email}</td>
+                <td className="border py-2">{appointment.city}</td>
+                <td className="border py-2">
                   <button
                     type="button"
                     onClick={() => handleDeleteAppointment(appointment.id)}
@@ -76,7 +76,7 @@ function Appointments() {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 }
 

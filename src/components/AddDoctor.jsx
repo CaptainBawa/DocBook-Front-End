@@ -44,9 +44,9 @@ function AddDoctor() {
     e.preventDefault();
     try {
       await dispatch(createDoctor(formData));
-      setShowSuccessAlert(true); // Show the success alert
+      setShowSuccessAlert(true);
       setTimeout(() => {
-        setShowSuccessAlert(false); // Hide the success alert after 1 second
+        setShowSuccessAlert(false);
       }, 1000);
       setFormData({
         name: '',

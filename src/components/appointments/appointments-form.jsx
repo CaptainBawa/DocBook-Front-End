@@ -30,11 +30,10 @@ function BookAppointmentContainer() {
   const [formData, setFormData] = useState({
     appointment_date: '',
     doctor_id: '',
-    user_id: '', // Initialize user_id
+    user_id: '',
     city: '',
   });
 
-  // Initialize userId based on logged-in user
   const loggedInUser = users.find((user) => user.username);
   const userId = loggedInUser ? loggedInUser.id : '';
 
@@ -46,7 +45,7 @@ function BookAppointmentContainer() {
       setFormData({
         appointment_date: '',
         doctor_id: '',
-        user_id: '', // Reset user_id to an empty string
+        user_id: '',
         city: '',
       });
       window.location.href = '/my-appointments';

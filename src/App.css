@@ -65,20 +65,14 @@ body {
   top: -100px;
 }
 
-table {
+/* table {
   border-collapse: collapse;
-}
+} */
 
 table,
 td,
 th {
   border: 1px solid black;
-}
-
-.Biggie {
-  width: 80%;
-  margin-left: 270px;
-  margin-top: -40rem;
 }
 
 .cancel-app {

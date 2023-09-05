@@ -38,14 +38,13 @@ function DoctorList() {
   };
 
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-gray-100 w-full">
       <div className="container px-8 py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 text-center mb-4 sm:mb-6">
           Doctor List
         </h2>
         <div className="mt-4 relative w-full ">
 
-          {/* Show this content on mobile screens only */}
           <div className="lg:hidden flex justify-center w-56">
             <div className="">
               {doctors.map((doctor) => (
@@ -66,7 +65,6 @@ function DoctorList() {
             </div>
           </div>
 
-          {/* Show this content on screens larger than lg */}
           <div className="hidden lg:block">
             <div
               id="default-carousel"
