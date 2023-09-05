@@ -198,7 +198,9 @@ If you like this project give me a star
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 
-I would like to thank Microverse for the learning experinece, and my partners for all beautiful contributions made
+- **Microverse Community**I would like to thank Microverse for the learning experience
+- **Coding Partners** I also really appreciate my partners for all the beautiful contributions made
+- **Murat Korkmaz**: Our sincere appreciation goes to [Murat Korkmaz](https://www.behance.net/muratk), the incredibly talented artist behind the original design of DocBook. Your creative vision and artistic contributions have given our platform its distinctive and visually appealing identity. [View Gregoire Vella's work.](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
