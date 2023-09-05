@@ -4,6 +4,7 @@ import {
   fetchDoctors, selectDoctors, selectDoctorsStatus, selectDoctorsError,
   deleteDoctor,
 } from '../redux/doctorsSlice';
+import { NavLink } from 'react-router-dom';
 
 const DeleteDoctor = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,12 @@ const DeleteDoctor = () => {
 
   return (
     <div className="w-full md:w-10/12 mx-auto">
+      <button
+              type="button"
+              className="bg-blue-700 hover:bg-blue-500 text-white py-2 px-6 ml-4 rounded-md transition duration-300 ease-in-out my-5"
+            >
+              <NavLink to="/home">&larr; Go Back</NavLink>
+            </button>
       <h2 className="text-center font-bold text-3xl mt-6 mb-8 text-indigo-700">Doctor List</h2>
       {status === 'loading' && (
       <div className="text-center text-gray-600 animate-pulse">
