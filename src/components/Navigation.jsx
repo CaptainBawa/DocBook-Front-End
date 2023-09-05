@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SlMenu } from 'react-icons/sl';
+import Logout from './Logout';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -47,6 +48,7 @@ const Navigation = () => {
               DELETE DOCTOR
             </NavLink>
           </li>
+          <li className="nav-item"><Logout /></li>
         </ul>
       </nav>
     </div>
