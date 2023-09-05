@@ -1,6 +1,7 @@
 import React from 'react';
 import DoctorList from './doctors/DoctorList';
 import Navigation from './Navigation';
+import DoctorDetails from './doctors/DoctorDetails';
 import '../App.css';
 
 const Layout = () => (
@@ -10,6 +11,9 @@ const Layout = () => (
     </div>
     <div className="w-10/12 flex items-center">
       <DoctorList />
+    </div>
+    <div className="w-10/12 flex items-center">
+      <DoctorDetails />
     </div>
   </div>
 );
