@@ -6,7 +6,7 @@ function Logout() {
 
   const handleLogout = async () => {
     try {
-      await axios.delete('http://localhost:3000/users/sign_out');
+      await axios.delete('https://docbook-ln5p.onrender.com/users/sign_out');
       window.location.href = '/';
     } catch (error) {
       setError(`Error logging out: ${error.message}`);

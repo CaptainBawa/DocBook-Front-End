@@ -13,7 +13,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/users', { user: { username, email, password } });
+      await axios.post('https://docbook-ln5p.onrender.com/users', { user: { username, email, password } });
       window.location.href = '/';
     } catch (error) {
       if (error.response) {
