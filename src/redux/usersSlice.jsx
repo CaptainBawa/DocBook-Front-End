@@ -9,7 +9,7 @@ const initialState = {
 };
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   try {
-    const response = await axios.get('http://localhost:3000/users');
+    const response = await axios.get('https://docbook-ln5p.onrender.com/users');
     return response.data;
   } catch (error) {
     throw new Error('Failed to fetch users');

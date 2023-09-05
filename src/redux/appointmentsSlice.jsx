@@ -10,7 +10,7 @@ const initialState = {
 
 export const fetchAppointments = createAsyncThunk('appointments/fetchAppointments', async () => {
   try {
-    const response = await axios.get('http://localhost:3000/appointments');
+    const response = await axios.get('https://docbook-ln5p.onrender.com/appointments');
     return response.data;
   } catch (error) {
     throw new Error('Failed to fetch appointments');
@@ -19,7 +19,7 @@ export const fetchAppointments = createAsyncThunk('appointments/fetchAppointment
 
 export const createAppointment = createAsyncThunk('appointments/createAppointment', async (appointmentData) => {
   try {
-    const response = await axios.post('http://localhost:3000/appointments', appointmentData);
+    const response = await axios.post('https://docbook-ln5p.onrender.com/appointments', appointmentData);
     return response.data;
   } catch (error) {
     throw new Error('Failed to create an appointments');
@@ -28,7 +28,7 @@ export const createAppointment = createAsyncThunk('appointments/createAppointmen
 
 export const deleteAppointment = createAsyncThunk('appointments/deleteAppointment', async (appointmentId) => {
   try {
-    await axios.delete(`http://localhost:3000/appointments/${appointmentId}`);
+    await axios.delete(`https://docbook-ln5p.onrender.com/appointments/${appointmentId}`);
     return appointmentId;
   } catch (error) {
     throw new Error('Failed to delete the appointment');

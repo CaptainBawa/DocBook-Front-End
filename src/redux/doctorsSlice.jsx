@@ -10,7 +10,7 @@ const initialState = {
 
 export const fetchDoctors = createAsyncThunk('doctors/fetchDoctors', async () => {
   try {
-    const response = await axios.get('http://localhost:3000/doctors');
+    const response = await axios.get('https://docbook-ln5p.onrender.com/doctors');
     return response.data;
   } catch (error) {
     throw new Error('Failed to fetch doctors');
@@ -19,7 +19,7 @@ export const fetchDoctors = createAsyncThunk('doctors/fetchDoctors', async () =>
 
 export const createDoctor = createAsyncThunk('doctors/createDoctor', async (doctorData) => {
   try {
-    const response = await axios.post('http://localhost:3000/doctors', doctorData);
+    const response = await axios.post('https://docbook-ln5p.onrender.com/doctors', doctorData);
     return response.data;
   } catch (error) {
     throw new Error('Failed to create a doctor');
@@ -28,7 +28,7 @@ export const createDoctor = createAsyncThunk('doctors/createDoctor', async (doct
 
 export const deleteDoctor = createAsyncThunk('doctors/deleteDoctor', async (doctorId) => {
   try {
-    await axios.delete(`http://localhost:3000/doctors/${doctorId}`);
+    await axios.delete(`https://docbook-ln5p.onrender.com/doctors/${doctorId}`);
     return doctorId;
   } catch (error) {
     throw new Error('Failed to delete a doctor');
