@@ -1,7 +1,6 @@
 import React from 'react';
 import DoctorList from './doctors/DoctorList';
 import Navigation from './Navigation';
-import DoctorDetails from './doctors/DoctorDetails';
 import '../App.css';
 
 const Layout = () => (
