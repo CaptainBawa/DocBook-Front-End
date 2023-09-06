@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { createDoctor } from '../redux/doctorsSlice';
 
-function AddDoctor() {
+const AddDoctor = () => {
   const dispatch = useDispatch();
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [formData, setFormData] = useState({
@@ -186,5 +186,5 @@ function AddDoctor() {
       </div>
     </div>
   );
-}
+};
 export default AddDoctor;

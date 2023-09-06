@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function Logout() {
+const Logout = () => {
   const [error, setError] = useState(null);
 
   const handleLogout = async () => {
@@ -19,6 +19,6 @@ function Logout() {
       <button type="button" onClick={handleLogout}>LOGOUT</button>
     </div>
   );
-}
+};
 
 export default Logout;
