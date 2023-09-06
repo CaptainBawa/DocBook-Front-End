@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 
 import Navigation from '../Navigation';
@@ -15,7 +15,6 @@ import {
 
 function DoctorDetails() {
   const { doctorId } = useParams();
-  const dispatch = useDispatch();
 
   const doctors = useSelector(selectDoctors);
   const doctorsStatus = useSelector(selectDoctorsStatus);
