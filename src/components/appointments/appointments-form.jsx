@@ -7,7 +7,7 @@ import { selectDoctors, fetchDoctors } from '../../redux/doctorsSlice';
 import { selectUsers, fetchUsers } from '../../redux/usersSlice';
 import { createAppointment } from '../../redux/appointmentsSlice';
 
-function BookAppointmentContainer() {
+const BookAppointmentContainer = () => {
   const dispatch = useDispatch();
   const users = useSelector(selectUsers);
   const doctors = useSelector(selectDoctors);
@@ -157,6 +157,6 @@ function BookAppointmentContainer() {
       </div>
     </div>
   );
-}
+};
 
 export default BookAppointmentContainer;

@@ -6,7 +6,7 @@ import {
   selectDoctors,
 } from '../../redux/doctorsSlice';
 
-function DoctorList() {
+const DoctorList = () => {
   const dispatch = useDispatch();
   const doctors = useSelector(selectDoctors);
 
@@ -163,6 +163,6 @@ function DoctorList() {
     </div>
 
   );
-}
+};
 
 export default DoctorList;

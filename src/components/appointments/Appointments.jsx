@@ -9,7 +9,7 @@ import {
 } from '../../redux/appointmentsSlice';
 import Navigation from '../Navigation';
 
-function Appointments() {
+const Appointments = () => {
   const dispatch = useDispatch();
   const appointments = useSelector(selectAppointments);
   const status = useSelector(selectAppointmentsStatus);
@@ -78,6 +78,6 @@ function Appointments() {
       </div>
     </div>
   );
-}
+};
 
 export default Appointments;
