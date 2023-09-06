@@ -158,7 +158,6 @@ th {
 
 .cancel-app {
   background-color: #97bf0f;
-  
 }
 
 .appointments-body-background {
@@ -182,7 +181,13 @@ th {
     position: relative;
     z-index: 7000;
   }
-  .cancel-app{
+
+  .cancel-app {
     font-size: 8px;
+  }
+
+  .table_wrapper {
+    position: relative;
+    top: -800px;
   }
 }
