@@ -65,10 +65,91 @@ body {
   top: -100px;
 }
 
-/* table {
-  border-collapse: collapse;
-} */
+/* ----------Doctor details ----------- */
+.doc-img {
+  margin-top: -50rem;
+  margin-left: 252px;
+  object-fit: cover;
+  height: 720px;
+  width: 65%;
+}
 
+.pop {
+  width: 18%;
+  margin-left: 82%;
+  padding: 1%;
+  outline: none;
+  border: none;
+}
+
+.popa {
+  background-color: #d9dbe0;
+}
+
+.popb {
+  background-color: #d9dbe0;
+}
+
+.popc {
+  background-color: #d9dbe0;
+}
+
+.pop1 {
+  text-align: right;
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.pop-btn {
+  margin-left: 85%;
+  border-radius: 40px;
+  background-color: #97bf0f;
+  margin-top: 3%;
+}
+
+.popi-btn {
+  margin-left: 252px;
+  margin-top: -13px;
+  border-radius: 0;
+  background-color: #97bf0f;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.lead {
+  text-align: right;
+  margin-top: -40rem;
+  font-size: 26px;
+  margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .doc-img {
+    margin-top: -50rem;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .pop {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px; /* Adjust as needed */
+  }
+
+  .pop-btn,
+  .popi-btn {
+    margin-left: 0;
+    margin-top: 10px; /* Adjust as needed */
+  }
+
+  .lead {
+    margin-top: 0; /* Adjust as needed */
+  }
+}
+
+/* ---------table -------------------- */
 table,
 td,
 th {
