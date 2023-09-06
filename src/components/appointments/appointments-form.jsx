@@ -7,10 +7,12 @@ import { selectDoctors, fetchDoctors } from '../../redux/doctorsSlice';
 import { selectUsers, fetchUsers } from '../../redux/usersSlice';
 import { createAppointment } from '../../redux/appointmentsSlice';
 
-function BookAppointmentContainer() {
+const BookAppointmentContainer = () => {
   const dispatch = useDispatch();
   const users = useSelector(selectUsers);
   const doctors = useSelector(selectDoctors);
+  const [selectedUser, setSelectedUser] = useState('');
+  const userId = selectedUser || '';
 
   useEffect(() => {
     if (!users.length) {
@@ -33,9 +35,6 @@ function BookAppointmentContainer() {
     user_id: '',
     city: '',
   });
-
-  const loggedInUser = users.find((user) => user.username);
-  const userId = loggedInUser ? loggedInUser.id : '';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -147,6 +146,20 @@ function BookAppointmentContainer() {
             ))}
           </select>
 
+          <select
+            name="user_id"
+            value={selectedUser}
+            onChange={(e) => setSelectedUser(e.target.value)}
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
+          >
+            <option value="">Select your username</option>
+            {users.map((user) => (
+              <option key={user.id} value={user.id}>
+                {user.username}
+              </option>
+            ))}
+          </select>
+
           <button
             type="submit"
             className="w-full bg-lime-500 text-white px-4 py-2 rounded-full hover:bg-lime-600 transition duration-300"
@@ -157,6 +170,6 @@ function BookAppointmentContainer() {
       </div>
     </div>
   );
-}
+};
 
 export default BookAppointmentContainer;

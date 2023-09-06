@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { selectUsers, fetchUsers } from '../redux/usersSlice';
 import { createDoctor } from '../redux/doctorsSlice';
 
-function AddDoctor() {
+const AddDoctor = () => {
   const dispatch = useDispatch();
+  const users = useSelector(selectUsers);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [selectedUser, setSelectedUser] = useState('');
+  const userId = selectedUser || '';
+
+  useEffect(() => {
+    if (!users.length) {
+      dispatch(fetchUsers());
+    }
+  }, [dispatch, users.length]);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,7 +26,7 @@ function AddDoctor() {
     picture: '',
     specialty: '',
     price: '',
-    user_id: '1',
+    user_id: '',
     addresses_attributes: [
       {
         country: '',
@@ -25,6 +36,7 @@ function AddDoctor() {
       },
     ],
   });
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -43,7 +55,7 @@ function AddDoctor() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(createDoctor(formData));
+      await dispatch(createDoctor({ ...formData, user_id: userId }));
       setShowSuccessAlert(true);
       setTimeout(() => {
         setShowSuccessAlert(false);
@@ -55,7 +67,7 @@ function AddDoctor() {
         picture: '',
         specialty: '',
         price: '',
-        user_id: '1',
+        user_id: '',
         addresses_attributes: [
           {
             country: '',
@@ -175,6 +187,20 @@ function AddDoctor() {
               placeholder="Doctor's street"
               className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
             />
+
+            <select
+              name="user_id"
+              value={selectedUser}
+              onChange={(e) => setSelectedUser(e.target.value)}
+              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lime-400 focus:border-lime-400"
+            >
+              <option value="">Select your username</option>
+              {users.map((user) => (
+                <option key={user.id} value={user.id}>
+                  {user.username}
+                </option>
+              ))}
+            </select>
             <button
               type="submit"
               className="w-full bg-lime-500 text-white px-4 py-2 rounded-lg hover:bg-lime-600 transition duration-300"
@@ -186,5 +212,5 @@ function AddDoctor() {
       </div>
     </div>
   );
-}
+};
 export default AddDoctor;

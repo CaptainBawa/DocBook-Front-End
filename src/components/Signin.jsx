@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/Login.css';
 
-function Signup() {
+const Signup = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -53,6 +53,6 @@ function Signup() {
       </div>
     </div>
   );
-}
+};
 
 export default Signup;

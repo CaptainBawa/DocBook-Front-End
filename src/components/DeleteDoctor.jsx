@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import {
   fetchDoctors, selectDoctors, selectDoctorsStatus, selectDoctorsError,
@@ -24,11 +26,16 @@ const DeleteDoctor = () => {
     <div className="w-full md:w-10/12 mx-auto">
       <button
         type="button"
-        className="bg-blue-700 hover:bg-blue-500 text-white py-2 px-6 ml-4 rounded-md transition duration-300 ease-in-out my-5"
       >
-        <NavLink to="/home">&larr; Go Back</NavLink>
+        <NavLink
+          to="/home"
+          activeClassName="active"
+          className=" p-2 rounded-full"
+        >
+          <FontAwesomeIcon icon={faCircleArrowLeft} className="w-10 h-10 pt-4 text-lime-500 hover:bg-slate-300" />
+        </NavLink>
       </button>
-      <h2 className="text-center font-bold text-3xl mt-6 mb-8 text-indigo-700">Doctor List</h2>
+      <h2 className="text-center font-bold text-3xl mt-6 mb-8 text-black">Doctor List</h2>
       {status === 'loading' && (
       <div className="text-center text-gray-600 animate-pulse">
         Loading...
@@ -44,7 +51,7 @@ const DeleteDoctor = () => {
       <div className="overflow-x-auto">
         <table className="table-auto w-full bg-white shadow-lg rounded-lg">
           <thead>
-            <tr className="bg-indigo-700 text-white">
+            <tr className="bg-lime-500 text-white">
               <th className="px-6 py-3 text-left">Doctor Name</th>
               <th className="px-6 py-3 text-left">Actions</th>
             </tr>
