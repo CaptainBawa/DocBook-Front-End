@@ -11,7 +11,6 @@ import {
 import {
   selectAppointmentsStatus,
   selectAppointmentsError,
-  createAppointment,
 } from '../../redux/appointmentsSlice';
 
 function DoctorDetails() {
@@ -26,10 +25,6 @@ function DoctorDetails() {
   const appointmentsError = useSelector(selectAppointmentsError);
 
   const doctor = doctors.find((doc) => doc.id === parseInt(doctorId, 10));
-
-  const handleAppointment = () => {
-    dispatch(createAppointment({ doctor_id: doctor.id }));
-  };
 
   if (doctorsStatus === 'loading' || appointmentsStatus === 'loading') {
     return <div>Loading...</div>;
@@ -100,10 +95,9 @@ function DoctorDetails() {
           </div>
           <button
             type="button"
-            onClick={handleAppointment}
             className="pop-btn mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md"
           >
-            Reserve Appointment
+            <NavLink to="/appointments-form">Reserve Appointment</NavLink>
           </button>
           <button
             type="button"
