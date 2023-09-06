@@ -14,9 +14,6 @@ function BookAppointmentContainer() {
   const [selectedUser, setSelectedUser] = useState('');
   const userId = selectedUser || '';
 
-  // const loggedInUser = users.find((user) => user.username);
-  // const userId = loggedInUser ? loggedInUser.id : '';
-
   useEffect(() => {
     if (!users.length) {
       dispatch(fetchUsers());
