@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 
 import Navigation from '../Navigation';
@@ -11,12 +11,10 @@ import {
 import {
   selectAppointmentsStatus,
   selectAppointmentsError,
-  createAppointment,
 } from '../../redux/appointmentsSlice';
 
 function DoctorDetails() {
   const { doctorId } = useParams();
-  const dispatch = useDispatch();
 
   const doctors = useSelector(selectDoctors);
   const doctorsStatus = useSelector(selectDoctorsStatus);
@@ -26,10 +24,6 @@ function DoctorDetails() {
   const appointmentsError = useSelector(selectAppointmentsError);
 
   const doctor = doctors.find((doc) => doc.id === parseInt(doctorId, 10));
-
-  const handleAppointment = () => {
-    dispatch(createAppointment({ doctor_id: doctor.id }));
-  };
 
   if (doctorsStatus === 'loading' || appointmentsStatus === 'loading') {
     return <div>Loading...</div>;
@@ -100,10 +94,9 @@ function DoctorDetails() {
           </div>
           <button
             type="button"
-            onClick={handleAppointment}
             className="pop-btn mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md"
           >
-            Reserve Appointment
+            <NavLink to="/appointments-form">Reserve Appointment</NavLink>
           </button>
           <button
             type="button"
