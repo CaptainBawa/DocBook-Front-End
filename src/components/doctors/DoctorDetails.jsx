@@ -13,7 +13,7 @@ import {
   createAppointment,
 } from '../../redux/appointmentsSlice';
 
-function DoctorDetails() {
+const DoctorDetails = () => {
   const { doctorId } = useParams();
   const dispatch = useDispatch();
 
@@ -110,6 +110,6 @@ function DoctorDetails() {
       </div>
     </div>
   );
-}
+};
 
 export default DoctorDetails;

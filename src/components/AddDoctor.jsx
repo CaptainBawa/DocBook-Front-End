@@ -6,7 +6,7 @@ import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { selectUsers, fetchUsers } from '../redux/usersSlice';
 import { createDoctor } from '../redux/doctorsSlice';
 
-function AddDoctor() {
+const AddDoctor = () => {
   const dispatch = useDispatch();
   const users = useSelector(selectUsers);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
@@ -212,5 +212,5 @@ function AddDoctor() {
       </div>
     </div>
   );
-}
+};
 export default AddDoctor;
