@@ -158,6 +158,7 @@ th {
 
 .cancel-app {
   background-color: #97bf0f;
+  
 }
 
 .appointments-body-background {
@@ -180,5 +181,8 @@ th {
   .nav-container {
     position: relative;
     z-index: 7000;
+  }
+  .cancel-app{
+    font-size: 8px;
   }
 }
