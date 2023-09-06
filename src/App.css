@@ -181,4 +181,13 @@ th {
     position: relative;
     z-index: 7000;
   }
+
+  .cancel-app {
+    font-size: 8px;
+  }
+
+  .table_wrapper {
+    position: relative;
+    top: -800px;
+  }
 }
