@@ -29,54 +29,57 @@ const Appointments = () => {
     };
   }, [dispatch]);
   return (
+<div className="flex flex-col md:flex-row">
+  <Navigation />
 
-    <div className="flex">
-      <Navigation />
-      <div className="w-5/6 flex justify-center flex-col">
-        <h2 className="text-center font-bold text-2xl">Appointments</h2>
-        {status === 'loading' && <div>Loading...</div>}
-        {status === 'failed' && (
-          <div>
-            Error:
-            {error}
-          </div>
-        )}
-        <table className="table-auto w-3/6 md:w-full items-center">
-          <thead>
-            <tr>
-              <th className="">Date</th>
-              <th className="">Patient's name</th>
-              <th className="">Doctor's name</th>
-              <th className="">Fees($)</th>
-              <th className="">Doctor's contact</th>
-              <th className="">Appointments Location</th>
-              <th className="">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {appointments.map((appointment) => (
-              <tr key={appointment.id}>
-                <td className="border py-2">{appointment.appointment_date}</td>
-                <td className="border py-2">{appointment.user.username}</td>
-                <td className="border py-2">{appointment.doctor.name}</td>
-                <td className="border py-2">{appointment.doctor.price}</td>
-                <td className="border py-2">{appointment.doctor.email}</td>
-                <td className="border py-2">{appointment.city}</td>
-                <td className="border py-2">
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteAppointment(appointment.id)}
-                    className="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full cancel-app"
-                  >
-                    Cancel Appointment
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  <div className="w-full md:w-5/6 flex flex-col justify-center">
+    <h2 className="text-center font-bold text-2xl">Appointments</h2>
+    {status === 'loading' && <div>Loading...</div>}
+    {status === 'failed' && (
+      <div>
+        Error:
+        {error}
       </div>
+    )}
+    <div className="overflow-x-auto">
+      <table className="table-auto w-full md:w-3/4 sm:w-11/12">
+        <thead>
+          <tr>
+            <th className="text-sm sm:text-base">Date</th>
+            <th className="text-sm sm:text-base">Patient's name</th>
+            <th className="text-sm sm:text-base">Doctor's name</th>
+            <th className="text-sm sm:text-base">Fees($)</th>
+            <th className="text-sm sm:text-base">Doctor's contact</th>
+            <th className="text-sm sm:text-base">Appointments Location</th>
+            <th className="text-sm sm:text-base">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {appointments.map((appointment) => (
+            <tr key={appointment.id}>
+              <td className="border py-2 text-sm sm:text-base">{appointment.appointment_date}</td>
+              <td className="border py-2 text-sm sm:text-base">{appointment.user.username}</td>
+              <td className="border py-2 text-sm sm:text-base">{appointment.doctor.name}</td>
+              <td className="border py-2 text-sm sm:text-base">{appointment.doctor.price}</td>
+              <td className="border py-2 text-sm sm:text-base">{appointment.doctor.email}</td>
+              <td className="border py-2 text-sm sm:text-base">{appointment.city}</td>
+              <td className="border py-2">
+                <button
+                  type="button"
+                  onClick={() => handleDeleteAppointment(appointment.id)}
+                  className="bg-red-500 hover:bg-green-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-full cancel-app"
+                >
+                  Cancel
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+  </div>
+</div>
+
   );
 };
 
