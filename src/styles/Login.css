@@ -1,0 +1,99 @@
+.bg-pic {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://img.freepik.com/free-photo/medium-shot-doctor-posing-studio_23-2150275672.jpg?size=626&ext=jpg&ga=GA1.2.832476715.1693529856&semt=ais");
+  background-size: cover;
+  background-position: center center;
+  filter: contrast(150%) brightness(86%);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-pic .welcome {
+  font-size: 2em;
+  font-style: oblique;
+  color: #fff;
+  font-weight: 900;
+  width: 35%;
+  position: relative;
+  right: 30%;
+}
+
+.login-container {
+  background-color: #111;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  rotate: 0deg;
+  margin: 0;
+  font-size: 3.5em;
+}
+
+.login-container p {
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container form .input-field {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-container form .login-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container form .login-button:hover {
+  background-color: #0056b3;
+}
+
+.login-container form .error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .login-container form {
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .login-container form .input-field,
+  .login-container form .login-button {
+    width: 100%;
+  }
+
+  .bg-pic .welcome {
+    font-size: 1.1em;
+    width: 80%;
+    right: 0%;
+    bottom: 8%;
+  }
+}

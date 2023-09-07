@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional Tailwind CSS styles */
+body {
+  background-color: #fff;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  width: 250px;
+  background-color: #fff;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.nav-item {
+  color: rgb(48, 46, 46);
+}
+
+.nav-item:hover {
+  background-color: #97bf0f;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-container ul {
+  list-style: none;
+  margin: 0;
+  gap: 6px;
+  width: 250px;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  margin-top: 230px;
+  font-size: 18px;
+  font-weight: 900;
+  justify-content: center;
+}
+
+.nav-container li {
+  height: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.nav-container h2 {
+  font-family: cursive;
+  font-size: 40px;
+  text-decoration: underline;
+  color: rgb(48, 46, 46);
+  rotate: -15deg;
+  padding-left: 10px;
+  font-weight: bolder;
+}
+
+.header_nav {
+  position: relative;
+  top: -100px;
+}
+
+/* ----------Doctor details ----------- */
+.doc-img {
+  margin-top: -50rem;
+  margin-left: 252px;
+  object-fit: cover;
+  height: 720px;
+  width: 65%;
+}
+
+.pop {
+  width: 18%;
+  margin-left: 82%;
+  padding: 1%;
+  outline: none;
+  border: none;
+}
+
+.popa {
+  background-color: #d9dbe0;
+}
+
+.popb {
+  background-color: #d9dbe0;
+}
+
+.popc {
+  background-color: #d9dbe0;
+}
+
+.pop1 {
+  text-align: right;
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.pop-btn {
+  margin-left: 85%;
+  border-radius: 40px;
+  background-color: #97bf0f;
+  margin-top: 3%;
+}
+
+.popi-btn {
+  margin-left: 252px;
+  margin-top: -13px;
+  border-radius: 0;
+  background-color: #97bf0f;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.lead {
+  text-align: right;
+  margin-top: -40rem;
+  font-size: 26px;
+  margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .doc-img {
+    margin-top: -50rem;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .pop {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px; /* Adjust as needed */
+  }
+
+  .pop-btn,
+  .popi-btn {
+    margin-left: 0;
+    margin-top: 10px; /* Adjust as needed */
+  }
+
+  .lead {
+    margin-top: 0; /* Adjust as needed */
+  }
+}
+
+/* ---------table -------------------- */
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+.cancel-app {
+  background-color: #97bf0f;
+}
+
+.appointments-body-background {
+  background-color: #d9dbe0;
+}
+
+/* ----------DROP DOWN MENU */
+
+/* Menu open styles */
+.nav-container.menu-open {
+  transform: translateX(0);
+}
+
+.menu.menu-open {
+  transform: translateX(0);
+}
+
+/* syles for mobile only */
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    z-index: 7000;
+  }
+
+  .cancel-app {
+    font-size: 8px;
+  }
+
+  .table_wrapper {
+    position: relative;
+    top: -800px;
+  }
+}
